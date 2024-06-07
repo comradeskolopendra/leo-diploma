@@ -1,0 +1,57 @@
+.aside {
+    background-color: #BC5A94;
+    width: 20%;
+    padding: 20px;
+    height: calc(100% - 110px);
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+}
+
+.listAnchors {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.anchor {
+    font-size: 25px;
+    color: white;
+    padding: 10px 0;
+    font-family: "Nunito";
+    font-weight: lighter;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    font-weight: normal;
+    user-select: none;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.anchor:visited {
+    color: white;
+}
+
+.anchor::after {
+    content: "";
+    width: 0%;
+    transition: width 0.3s ease-out;
+    background-color: white;
+    height: 1px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.anchor:hover::after {
+    width: 100%;
+    transition: width 0.3s ease-out;
+}
+
+.anchor::before {
+    content: "-";
+    padding-right: 15px;
+    color: white;
+    font-size: 25px;
+    opacity: 0.5;
+}

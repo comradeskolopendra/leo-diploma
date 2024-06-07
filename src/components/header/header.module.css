@@ -1,0 +1,27 @@
+.header {
+    background: #E43071;
+    width: 100%;
+    padding: 25px 0;
+    position: fixed;
+    top: 0;
+    z-index: 101;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.navigation h1 {
+    color: white;
+    font-weight: 800;
+    font-size: 40px;
+    margin: 0;
+}
+
+.navigation span {
+    opacity: 0.7;
+}
