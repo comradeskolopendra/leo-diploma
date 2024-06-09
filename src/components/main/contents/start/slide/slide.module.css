@@ -1,0 +1,17 @@
+.imageBG {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideTitle {
+    font-size: 45px;
+    color: white;
+    font-family: "Nunito";
+    user-select: none;
+}

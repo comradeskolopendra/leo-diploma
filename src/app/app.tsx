@@ -1,16 +1,14 @@
-import styles from './app.module.css';
-import Header from '../components/header/header';
 import Aside from '../components/aside/aside';
+import Header from '../components/header/header';
 import Main from '../components/main/main';
 
-function App() {
+
+const App = () => {
+
   return (
     <>
       <Header />
-
-
       <Aside />
-
       <Main />
       <footer>
 

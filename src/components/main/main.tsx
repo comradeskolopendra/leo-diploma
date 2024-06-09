@@ -1,15 +1,16 @@
 import styles from "./main.module.css";
 
-import StartContent from "./contents/start/start";
+import Start from "./contents/start/start";
+import Clubs from "./contents/clubs/clubs";
+import Reviews from "./contents/reviews/reviews";
 
 const Main = () => {
-
     return (
         <main className={styles.main}>
             <section className={styles.section}>
-                <StartContent />
-                <div id="clubs" className={styles.blue}></div>
-                <div id="reviews" className={styles.green}></div>
+                <Start />
+                <Clubs />
+                <Reviews />
                 <div id="calc" className={styles.yellow}></div>
                 <div id="faq" className={styles.purple}></div>
             </section>

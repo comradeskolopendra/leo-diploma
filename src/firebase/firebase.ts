@@ -1,10 +1,7 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, FirebaseOptions } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
-interface FirebaseConfig {
-    [key: string]: string;
-}
-
-const firebaseConfig: FirebaseConfig = {
+const firebaseConfig: FirebaseOptions = {
     apiKey: "AIzaSyD9hXMMNc49Y309QIM28f-OoycGn7kOJH0",
     authDomain: "leo-diploma.firebaseapp.com",
     projectId: "leo-diploma",
@@ -16,5 +13,4 @@ const firebaseConfig: FirebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-
-export default app;
+export const db = getFirestore();

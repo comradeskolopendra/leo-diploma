@@ -15,11 +15,12 @@
     --swiper-pagination-bullet-size: 8px;
     --swiper-pagination-bullet-width: 8px;
     --swiper-pagination-bullet-height: 8px;
-    --swiper-pagination-bullet-inactive-color: #000;
-    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-inactive-color: #ffffff;
+    --swiper-pagination-bullet-inactive-opacity: 0.5;
     --swiper-pagination-bullet-opacity: 1;
     --swiper-pagination-bullet-horizontal-gap: 4px;
     --swiper-pagination-bullet-vertical-gap: 6px;
+    --swiper-pagination-bottom: 8px;
 }
 
 .swiper {
@@ -36,4 +37,16 @@ body {
     margin: 0;
     box-sizing: border-box;
 
+}
+
+.instagram {
+    background-image: linear-gradient(72.44deg, #FF7A00 11.92%, #FF0169 51.56%, #D300C5 85.69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.whatsapp {
+    background-image: linear-gradient(72.44deg, #075E54 11.92%, #25D366 51.56%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

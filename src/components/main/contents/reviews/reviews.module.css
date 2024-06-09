@@ -1,0 +1,20 @@
+.title {
+    font-family: "Nunito";
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    text-align: center;
+    color: #E43071;
+}
+
+.loading {
+    text-align: center;
+}
+
+.reviews {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    column-count: 3;
+    column-gap: 15px;
+}

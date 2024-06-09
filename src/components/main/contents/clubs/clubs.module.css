@@ -1,0 +1,18 @@
+.title {
+    font-family: "Nunito";
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    text-align: center;
+    color: #E43071;
+}
+
+.loading {
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}

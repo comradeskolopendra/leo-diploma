@@ -1,73 +1,61 @@
+import { useEffect } from "react";
+import { getData } from "../../../../firebase/helpers";
+import { setSlides } from "../../../../redux/store";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
+import { getStateSlides, getStateSlidesLoading } from "./selectors";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import "swiper/css/autoplay";
-import 'swiper/css/effect-fade';
 import "swiper/css/pagination";
 
+import Slide from "./slide/slide";
 import styles from "./start.module.css";
-import { useMemo } from "react";
 
-import girl from "../../../../assets/images/girl.jpg";
-import griefs from "../../../../assets/images/griefs.jpg";
-import person from "../../../../assets/images/person.jpg";
-import running from "../../../../assets/images/running.jpg";
+const Start = () => {
+    const dispatch = useAppDispatch();
+    const slides = useAppSelector(getStateSlides);
+    const slidesLoading = useAppSelector(getStateSlidesLoading);
 
-interface SlidesModel {
-    image: string;
-    textContent: string;
-}
-
-const StartContent = () => {
-
-
-    const slides = useMemo<SlidesModel[]>(() => {
-        return [
-            {
-                image: girl,
-                textContent: "Добро пожаловать"
-            },
-            {
-                image: running,
-                textContent: "Встречай свое новое тело"
-            },
-            {
-                image: griefs,
-                textContent: "Ты можешь быть лучше, чем ты есть"
-            },
-            {
-                image: person,
-                textContent: "Больше усилий делают тебя сильнее"
-            }
-        ]
+    useEffect(() => {
+        getData("slides").then(data => {
+            dispatch(setSlides(data));
+        })
     }, [])
 
     return (
-        <section id='start' className={styles.start}>
-            <Swiper
-                modules={[Pagination, Autoplay]}
-                slidesPerView={1}
-                loop
-                pagination={{ clickable: false }}
-            >
-                {
-                    slides.map((item) => (
-                        <SwiperSlide
-                            key={item.image}
-                            className={styles.slide}
-                        >
-                            <div className={styles.imageBG} style={{ backgroundImage: `url(${item.image})` }}>
-                                <h3 className={styles.slideTitle}>
-                                    {item.textContent}
-                                </h3>
-                            </div>
-                        </SwiperSlide>
-                    ))
-                }
-            </Swiper>
-        </section>
+        <>
+            {slidesLoading && slides.length === 0 && <h2 className={styles.loading}>Loading...</h2>}
+            {!slidesLoading && slides.length > 0 && <section id='start' className={styles.start}>
+                <Swiper
+                    modules={[Pagination, Autoplay]}
+                    slidesPerView={1}
+                    spaceBetween={50}
+                    loop
+                    autoplay={{ delay: 1500 }}
+                    pagination={{ clickable: false }}
+                    allowTouchMove={false}
+                >
+                    {
+                        slides.map((item) => (
+
+                            <SwiperSlide
+                                key={item.image}
+                                className={styles.slide}
+                            >
+                                <Slide
+                                    image={item.image}
+                                    title={item.title}
+                                    key={item.image}
+                                />
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
+            </section>}
+        </>
     );
 };
 
-export default StartContent;
+export default Start;

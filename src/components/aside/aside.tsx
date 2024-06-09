@@ -4,10 +4,7 @@ const Aside = () => {
     return (
         <aside className={styles.aside}>
             <nav>
-                <dl className={styles.listAnchors}>
-                    <li>
-                        <a className={styles.anchor} href="#start">В начало</a>
-                    </li>
+                <ul className={styles.listAnchors}>
                     <li>
                         <a className={styles.anchor} href="#clubs">Фитнесс-клубы</a>
                     </li>
@@ -20,7 +17,7 @@ const Aside = () => {
                     <li>
                         <a className={styles.anchor} href="#faq">FAQ</a>
                     </li>
-                </dl>
+                </ul>
             </nav>
         </aside>
     );
