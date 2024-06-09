@@ -1,18 +1,10 @@
-.purple,
-.green,
-.yellow,
-.blue {
-    height: 100%;
-    width: 100%;
-}
-
 .main {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     width: 100%;
-    height: 100vh;
+    height: fit-content;
 }
 
 .section {
@@ -23,18 +15,8 @@
     box-sizing: border-box;
 }
 
-.purple {
-    background-color: purple;
-}
-
-.green {
-    background-color: green;
-}
-
-.yellow {
-    background-color: yellow;
-}
-
-.blue {
-    background-color: blue;
+@media screen and (max-width: 1379px) {
+    .section {
+        width: 100%;
+    }
 }

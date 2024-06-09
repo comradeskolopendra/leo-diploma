@@ -1,8 +1,9 @@
 import styles from "./main.module.css";
 
-import Start from "./contents/start/start";
+import Calculator from "./contents/calculator/calculator";
 import Clubs from "./contents/clubs/clubs";
 import Reviews from "./contents/reviews/reviews";
+import Start from "./contents/start/start";
 
 const Main = () => {
     return (
@@ -11,8 +12,7 @@ const Main = () => {
                 <Start />
                 <Clubs />
                 <Reviews />
-                <div id="calc" className={styles.yellow}></div>
-                <div id="faq" className={styles.purple}></div>
+                <Calculator />
             </section>
         </main>
     )

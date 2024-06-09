@@ -1,0 +1,21 @@
+.footer {
+    width: 80%;
+    margin-left: auto;
+    background: #E43071
+}
+
+.footerContent {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Nunito";
+    font-size: 25px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1379px) {
+    .footer {
+        width: 100%;
+    }
+}

@@ -18,3 +18,9 @@
     column-count: 3;
     column-gap: 15px;
 }
+
+@media screen and (max-width: 1063px) {
+    .reviews {
+        column-count: unset;
+    }
+}

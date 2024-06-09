@@ -42,6 +42,8 @@
     color: #E43071;
 }
 
-.link:hover {
-    transform: scale3d(1.5);
+@media screen and (max-width: 770px) {
+    .contents {
+        height: auto;
+    }
 }

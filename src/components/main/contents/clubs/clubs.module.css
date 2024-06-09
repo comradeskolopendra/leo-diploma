@@ -16,3 +16,15 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
+
+@media screen and (max-width: 1101px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}

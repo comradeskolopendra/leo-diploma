@@ -1,7 +1,7 @@
 import Aside from '../components/aside/aside';
 import Header from '../components/header/header';
 import Main from '../components/main/main';
-
+import Footer from '../components/footer/footer';
 
 const App = () => {
 
@@ -10,9 +10,7 @@ const App = () => {
       <Header />
       <Aside />
       <Main />
-      <footer>
-
-      </footer >
+      <Footer />
     </>
   );
 }

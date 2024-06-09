@@ -33,9 +33,10 @@ const Start = () => {
                     slidesPerView={1}
                     spaceBetween={50}
                     loop
-                    autoplay={{ delay: 1500 }}
+                    // autoplay={{ delay: 1500 }}
                     pagination={{ clickable: false }}
-                    allowTouchMove={false}
+                    className={styles.swiper}
+                // allowTouchMove={false}
                 >
                     {
                         slides.map((item) => (

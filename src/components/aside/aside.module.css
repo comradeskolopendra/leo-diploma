@@ -26,6 +26,10 @@
     user-select: none;
     text-decoration: none;
     font-weight: 500;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
 }
 
 .anchor:visited {
@@ -54,4 +58,10 @@
     color: white;
     font-size: 25px;
     opacity: 0.5;
+}
+
+@media screen and (max-width: 1379px) {
+    .aside {
+        display: none;
+    }
 }

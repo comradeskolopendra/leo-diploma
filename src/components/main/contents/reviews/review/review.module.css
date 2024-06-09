@@ -42,3 +42,16 @@
     object-position: center;
     object-fit: cover;
 }
+
+@media screen and (max-width: 1101px) {
+    .review {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .weight {
+        text-align: left;
+    }
+}
