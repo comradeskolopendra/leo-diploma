@@ -1,5 +1,8 @@
 import styles from "./aside.module.css";
 
+import googleBadge from "../../assets/images/google-badge.png";
+import appStoreBadge from "../../assets/images/app-store-badge.png";
+
 const Aside = () => {
 
     const handleClick = (id: string) => {
@@ -25,6 +28,15 @@ const Aside = () => {
                     </li>
                 </ul>
             </nav>
+
+            <section className={styles.downloadApp}>
+                <a className={styles.linkApp} href={"https://play.google.com/store/apps/details?id=com.codebusters.onefit"}>
+                    <img src={googleBadge} alt="" />
+                </a>
+                <a className={styles.linkApp} href={"https://apps.apple.com/app/id1375903148"}>
+                    <img src={appStoreBadge} alt="" />
+                </a>
+            </section>
         </aside>
     );
 };

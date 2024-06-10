@@ -178,7 +178,7 @@ const Calculator = () => {
                     {error && <h2>{error}</h2>}
                 </div>
 
-                {!error && isHaveResult && (
+                {!error && !paramError && isHaveResult && (
                     <ul className={styles.resultInfo}>
                         <li>Для того, чтобы держать текущий вес, вам необходимо потреблять <span>{normalPerDay}</span> калорий в день</li>
                         <li>

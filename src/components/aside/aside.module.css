@@ -1,4 +1,7 @@
 .aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #BC5A94;
     width: 20%;
     padding: 20px;
@@ -64,4 +67,13 @@
     .aside {
         display: none;
     }
+}
+
+.downloadApp {
+    display: flex;
+    justify-content: center;
+}
+
+.linkApp {
+    margin: 0 5px;
 }

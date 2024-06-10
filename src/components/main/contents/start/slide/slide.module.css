@@ -16,7 +16,7 @@
     user-select: none;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 855px) {
     .slideTitle {
         display: none;
     }
