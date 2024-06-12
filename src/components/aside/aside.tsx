@@ -30,10 +30,10 @@ const Aside = () => {
             </nav>
 
             <section className={styles.downloadApp}>
-                <a className={styles.linkApp} href={"https://play.google.com/store/apps/details?id=com.codebusters.onefit"}>
+                <a target="_blank" className={styles.linkApp} href={"https://play.google.com/store/apps/details?id=com.codebusters.onefit"}>
                     <img src={googleBadge} alt="" />
                 </a>
-                <a className={styles.linkApp} href={"https://apps.apple.com/app/id1375903148"}>
+                <a target="_blank" className={styles.linkApp} href={"https://apps.apple.com/app/id1375903148"}>
                     <img src={appStoreBadge} alt="" />
                 </a>
             </section>

@@ -15,7 +15,7 @@ const Club: FC<ClubProps> = ({ name, photo, address, description, network, typeN
         <article className={styles.card}>
             <div
                 className={styles.image}
-                style={{ backgroundImage: `url(${photo})` }}
+                style={photo ? { backgroundImage: `url(${photo})` } : { background: `rgba(128, 128, 128)` }}
             />
 
             <section className={styles.contents}>

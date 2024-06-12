@@ -1,12 +1,13 @@
 .footer {
     width: 80%;
     margin-left: auto;
-    background: #E43071
+    background: #E43071;
 }
 
 .footerContent {
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Nunito";
@@ -14,8 +15,15 @@
     font-weight: 600;
 }
 
+.link {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 15px;
+}
+
 @media screen and (max-width: 1379px) {
     .footer {
         width: 100%;
+        margin-left: unset;
     }
 }

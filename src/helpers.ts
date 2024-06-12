@@ -60,3 +60,16 @@ export const calcCalories = (
 
     return result;
 };
+
+export const formatErrorRu = (error: string) => {
+    switch (error) {
+        case "auth/invalid-email":
+            return "Не существует пользователя с такой электронной почтой";
+
+        case "auth/invalid-credential":
+            return "Неверные данные для входа."
+
+        default:
+            return "Ошибка!"
+    }
+};

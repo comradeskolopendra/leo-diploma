@@ -1,0 +1,17 @@
+.input {
+    margin-bottom: 15px;
+    border: 1px solid #E43071;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    color: #E43071;
+    font-family: "Nunito";
+    font-weight: 600;
+}
+
+.input::placeholder {
+    color: rgba(128, 128, 128, 0.9);
+    font-family: "Nunito";
+    font-weight: 400;
+}

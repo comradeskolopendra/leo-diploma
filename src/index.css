@@ -9,6 +9,12 @@
     src: url("./assets/fonts/Nunito.ttf") format("truetype");
 }
 
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 :root {
     --swiper-pagination-color: #E43071;

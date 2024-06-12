@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app/app';
 import { Provider } from 'react-redux';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 
 import store from './redux';
 
@@ -12,6 +13,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>
 );

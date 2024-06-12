@@ -1,0 +1,48 @@
+.radio {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    padding: 0;
+    border: 2px solid #E43071;
+    border-radius: 50%;
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.radio:not(:disabled):checked {
+    border-color: #E43071;
+    background-color: #E43071;
+    background-clip: content-box;
+    padding: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: #E43071;
+    border: 1px solid #E43071;
+    background-image: radial-gradient(circle,
+            #E43071 0%,
+            #E43071 50%,
+            transparent 60%,
+            transparent 100%);
+}
+
+.label {
+    color: rgba(128, 128, 128, 0.7);
+    font-family: "Nunito";
+}
+
+.container {
+    width: 350px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 770px) {
+    .container {
+        width: 100%
+    }
+}

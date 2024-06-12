@@ -1,0 +1,17 @@
+.activitySelect {
+    display: flex;
+    flex-direction: column;
+    font-family: "Nunito";
+    margin-bottom: 15px;
+}
+
+.activitySelect label {
+    color: rgba(128, 128, 128, 0.7);
+}
+
+.activitySelect select {
+    background-color: white;
+    border: 1px solid #E43071;
+    padding: 15px;
+    border-radius: 10px;
+}

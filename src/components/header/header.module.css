@@ -16,13 +16,14 @@
     margin: 0 auto;
 }
 
-.navigation h1 {
+.logo {
     color: white;
     font-weight: 800;
     font-size: 40px;
     margin: 0;
+    text-decoration: none;
 }
 
-.navigation span {
+.logo span {
     color: rgb(255, 0, 166);
 }

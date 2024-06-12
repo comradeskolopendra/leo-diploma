@@ -23,6 +23,10 @@ interface IInitialState {
 
     results: ICalcResults;
     isHaveResult: boolean;
+
+    userEmail: string;
+    userAuthError: string;
+    userAuthLoading: boolean;
 }
 
 const initialState: IInitialState = {
@@ -43,7 +47,11 @@ const initialState: IInitialState = {
         normalPerDay: 0,
         error: ""
     },
-    isHaveResult: false
+    isHaveResult: false,
+
+    userEmail: "",
+    userAuthError: "",
+    userAuthLoading: false
 }
 
 const appSlice = createSlice({
@@ -88,12 +96,55 @@ const appSlice = createSlice({
             state.isHaveResult = true;
 
             return state;
+        },
+        setCalcError(state, action: PayloadAction<string>) {
+            state.results.error = action.payload;
+
+            return state;
+        },
+        setUserEmail(state, action: PayloadAction<string>) {
+            state.userEmail = action.payload;
+            state.userAuthError = "";
+            state.userAuthLoading = false;
+
+            return state;
+        },
+        setUserAuthError(state, action: PayloadAction<string>) {
+            state.userEmail = "";
+            state.userAuthError = action.payload;
+            state.userAuthLoading = false;
+
+            return state;
+        },
+        setUserAuthLoading(state, action: PayloadAction<string>) {
+            state.userAuthError = "";
+            state.userAuthLoading = true;
+
+            return state;
+        },
+        clearUserInfo(state) {
+            state.userEmail = "";
+
+            return state;
         }
     }
 })
 
 type TAppActionCreators = typeof appSlice.actions;
 export type TAppActions = ReturnType<TAppActionCreators[keyof TAppActionCreators]>;
-export const { setClubs, setClubsLoading, setReviews, setReviewsLoading, setSlides, setSlidesLoading, setCalcResults } = appSlice.actions;
+export const {
+    setClubs,
+    setClubsLoading,
+    setReviews,
+    setReviewsLoading,
+    setSlides,
+    setSlidesLoading,
+    setCalcResults,
+    setCalcError,
+    setUserAuthError,
+    setUserEmail,
+    setUserAuthLoading,
+    clearUserInfo
+} = appSlice.actions;
 
 export default appSlice.reducer;

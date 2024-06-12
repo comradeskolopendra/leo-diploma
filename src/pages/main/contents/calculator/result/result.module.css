@@ -1,0 +1,39 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: "Nunito";
+}
+
+.errorBlock {
+    text-align: center;
+}
+
+.resultInfo {
+    text-align: left;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.resultInfo li {
+    padding-bottom: 5px;
+}
+
+.resultInfo li::before {
+    content: "-";
+    padding-right: 10px;
+    color: rgba(128, 128, 128, 0.7);
+}
+
+.resultInfo li span {
+    font-weight: bold;
+}
+
+.resultInfo ul {
+    list-style: none;
+}
+
+.resultInfo ul li {
+    padding-bottom: 0;
+}
