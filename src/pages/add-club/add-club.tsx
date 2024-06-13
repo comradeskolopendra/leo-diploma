@@ -1,9 +1,9 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import Button from "../../components/button/button";
 import TextInput from "../../components/text-input/text-input";
-import styles from "./add-club.module.css";
-import { setData } from "../../firebase/helpers";
 import { ISetClub } from "../../firebase/types";
+import { request } from "../../helpers";
+import styles from "./add-club.module.css";
 
 const AddClub = () => {
     const [formData, setFormData] = useState<ISetClub>({
@@ -12,7 +12,7 @@ const AddClub = () => {
         name: "",
         network: "",
         photo: "",
-        typeNetwork: ""
+        typenetwork: ""
     });
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +22,7 @@ const AddClub = () => {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setData(formData);
+        request("setClub", { method: "POST", body: JSON.stringify(formData) });
     };
 
     return (
@@ -67,9 +67,9 @@ const AddClub = () => {
                 <TextInput
                     type="text"
                     placeholder={"Тип соц. сети"}
-                    value={formData.typeNetwork}
+                    value={formData.typenetwork}
                     onChange={handleChange}
-                    name="typeNetwork"
+                    name="typenetwork"
                 />
                 <Button type="submit">Добавить</Button>
             </form>

@@ -7,10 +7,10 @@ interface ClubProps {
     description: string;
     address: string;
     network: string;
-    typeNetwork: string;
+    typenetwork: string;
 }
 
-const Club: FC<ClubProps> = ({ name, photo, address, description, network, typeNetwork }) => {
+const Club: FC<ClubProps> = ({ name, photo, address, description, network, typenetwork }) => {
     return (
         <article className={styles.card}>
             <div
@@ -25,8 +25,8 @@ const Club: FC<ClubProps> = ({ name, photo, address, description, network, typeN
                 </div>
                 <div>
                     <p>Адрес: <strong>{address}</strong></p>
-                    <a href={network} target="_blank" className={`${styles.link} ${typeNetwork.toLowerCase()}`}>
-                        {typeNetwork === "site" ? "Cайт" : typeNetwork}
+                    <a href={network} target="_blank" className={`${styles.link} ${typenetwork.toLowerCase()}`}>
+                        {typenetwork === "site" ? "Cайт" : typenetwork}
                     </a>
                 </div>
             </section>

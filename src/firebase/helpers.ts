@@ -1,23 +1,10 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { DocumentData, collection, doc, getDocs, setDoc } from "firebase/firestore";
 
-import { auth, db } from "./firebase";
+import { auth } from "./firebase";
 
 import { formatErrorRu } from "../helpers";
 
-import type { ILoginUserReturn, ISetClub } from "./types";
-
-export const getData = async (collectionName: string): Promise<DocumentData[]> => {
-    const data: DocumentData[] = [];
-    const ref = collection(db, collectionName);
-    const snap = await getDocs(ref);
-
-    snap.forEach(doc => {
-        data.push(doc.data())
-    })
-
-    return data;
-};
+import type { ILoginUserReturn } from "./types";
 
 export const loginUser = async (email: string, password: string): Promise<ILoginUserReturn> => {
     try {
@@ -29,7 +16,3 @@ export const loginUser = async (email: string, password: string): Promise<ILogin
         return { type: "error", info: formatErrorRu(error.code) };
     }
 }
-
-export const setData = async (data: ISetClub) => {
-    setDoc(doc(db, "clubs", data.name), { ...data })
-} 

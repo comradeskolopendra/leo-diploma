@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-import { getData } from "../../../../firebase/helpers";
-import { setReviewsLoading, setReviews } from "../../../../redux/store";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
+import { setReviews, setReviewsLoading } from "../../../../redux/store";
 import { getStateReviews, getStateReviewsLoading } from "./selectors";
 
+import { request } from "../../../../helpers";
 import Review from "./review/review";
 import styles from "./reviews.module.css";
 
@@ -17,7 +17,7 @@ const Reviews = () => {
     useEffect(() => {
         dispatch(setReviewsLoading());
 
-        getData("reviews").then(data => {
+        request("getRevs").then(data => {
             dispatch(setReviews(data));
         })
     }, [])

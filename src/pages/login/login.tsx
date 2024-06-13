@@ -49,7 +49,7 @@ const FormLogin = () => {
     };
 
     return (
-        <section className={styles.login}>
+        <main className={styles.login}>
             <h2 className={styles.title}>Вход</h2>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <TextInput
@@ -76,7 +76,7 @@ const FormLogin = () => {
 
                 <Button className={styles.button} type="submit" disabled={userAuthLoading}>Войти</Button>
             </form>
-        </section>
+        </main>
     )
 };
 

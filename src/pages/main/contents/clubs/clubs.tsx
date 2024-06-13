@@ -6,8 +6,8 @@ import { getStateClubs, getStateClubsLoading } from "./selectors";
 
 import styles from "./clubs.module.css";
 
-import { getData } from "../../../../firebase/helpers";
-import { setClubsLoading, setClubs } from "../../../../redux/store";
+import { request } from "../../../../helpers";
+import { setClubs, setClubsLoading } from "../../../../redux/store";
 
 const Clubs = () => {
     const dispatch = useAppDispatch();
@@ -17,7 +17,7 @@ const Clubs = () => {
     useEffect(() => {
         dispatch(setClubsLoading());
 
-        getData("clubs").then(data => {
+        request("getClubs").then(data => {
             dispatch(setClubs(data));
         })
     }, [])
@@ -36,7 +36,7 @@ const Clubs = () => {
                                 address={club.address}
                                 photo={club.photo}
                                 network={club.network}
-                                typeNetwork={club.typeNetwork}
+                                typenetwork={club.typenetwork}
                                 key={club.name}
                             />
                         )}

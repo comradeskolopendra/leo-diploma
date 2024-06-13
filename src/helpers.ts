@@ -73,3 +73,6 @@ export const formatErrorRu = (error: string) => {
             return "Ошибка!"
     }
 };
+
+export const request = (endpoint: string, options = {}): Promise<any> =>
+    fetch(`https://leo-diploma-backend.vercel.app/${endpoint}`, options).then((res) => res.json());

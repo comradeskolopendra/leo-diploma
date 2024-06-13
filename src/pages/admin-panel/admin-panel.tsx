@@ -12,12 +12,12 @@ const AdminPanel = () => {
     };
 
     return (
-        <section className={styles.section}>
+        <main className={styles.section}>
             <Link to={"/add-club"} className={styles.link}>
                 Добавить клуб
             </Link>
             <Button onClick={handleClickQuit} className={styles.button} type="button">Выйти</Button>
-        </section>
+        </main>
     )
 };
 

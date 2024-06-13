@@ -1,15 +1,15 @@
 import { useEffect } from "react";
-import { getData } from "../../../../firebase/helpers";
-import { setSlides } from "../../../../redux/store";
-import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
-import { getStateSlides, getStateSlidesLoading } from "./selectors";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
+import { setSlides, setSlidesLoading } from "../../../../redux/store";
+import { getStateSlides, getStateSlidesLoading } from "./selectors";
 
 import 'swiper/css';
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 
+import { request } from "../../../../helpers";
 import Slide from "./slide/slide";
 import styles from "./start.module.css";
 
@@ -19,7 +19,9 @@ const Start = () => {
     const slidesLoading = useAppSelector(getStateSlidesLoading);
 
     useEffect(() => {
-        getData("slides").then(data => {
+        dispatch(setSlidesLoading());
+
+        request("getSlides").then(data => {
             dispatch(setSlides(data));
         })
     }, [])

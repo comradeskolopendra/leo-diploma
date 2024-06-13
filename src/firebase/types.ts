@@ -9,5 +9,5 @@ export interface ISetClub {
     description: string;
     address: string;
     network: string;
-    typeNetwork: string;
+    typenetwork: string;
 }
