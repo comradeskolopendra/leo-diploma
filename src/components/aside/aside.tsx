@@ -1,30 +1,23 @@
 import styles from "./aside.module.css";
 
-import googleBadge from "../../assets/images/google-badge.png";
+import { HashLink } from 'react-router-hash-link';
 import appStoreBadge from "../../assets/images/app-store-badge.png";
+import googleBadge from "../../assets/images/google-badge.png";
+
 
 const Aside = () => {
-
-    // const handleClick = (id: string) => {
-    //     const toTop = id.includes("clubs") ? 0 : id.includes("reviews") ? 1200 : 2400;
-    //     window.scrollTo({
-    //         top: toTop,
-    //         behavior: "smooth"
-    //     })
-    // }
-
     return (
         <aside className={styles.aside}>
             <nav>
                 <ul className={styles.listAnchors}>
                     <li>
-                        <a className={styles.anchor} href={"#clubs"}>Фитнесс-клубы</a>
+                        <HashLink className={styles.anchor} to={"/#clubs"}>Фитнесс-клубы</HashLink>
                     </li>
                     <li>
-                        <a className={styles.anchor} href={"#reviews"}>Отзывы</a>
+                        <HashLink className={styles.anchor} to={"/#reviews"}>Отзывы</HashLink>
                     </li>
                     <li>
-                        <a className={styles.anchor} href={"#calc"}>Калькулятор</a>
+                        <HashLink className={styles.anchor} to={"/#calc"}>Калькулятор</HashLink>
                     </li>
                 </ul>
             </nav>

@@ -13,16 +13,12 @@ interface ICalcResults {
 
 interface IInitialState {
     clubs: DocumentData[];
-    clubsLoading: boolean;
-
     reviews: DocumentData[];
-    reviewsLoading: boolean;
-
     slides: DocumentData[];
-    slidesLoading: boolean;
 
     results: ICalcResults;
     isHaveResult: boolean;
+    isContentLoading: boolean;
 
     userEmail: string;
     userAuthError: string;
@@ -31,13 +27,8 @@ interface IInitialState {
 
 const initialState: IInitialState = {
     clubs: [],
-    clubsLoading: false,
-
     reviews: [],
-    reviewsLoading: false,
-
     slides: [],
-    slidesLoading: false,
 
     results: {
         first: 0,
@@ -48,6 +39,7 @@ const initialState: IInitialState = {
         error: ""
     },
     isHaveResult: false,
+    isContentLoading: false,
 
     userEmail: "",
     userAuthError: "",
@@ -60,34 +52,16 @@ const appSlice = createSlice({
     reducers: {
         setClubs(state, action: PayloadAction<DocumentData[]>) {
             state.clubs = action.payload;
-            state.clubsLoading = false;
-
-            return state;
-        },
-        setClubsLoading(state) {
-            state.clubsLoading = true;
 
             return state;
         },
         setReviews(state, action: PayloadAction<DocumentData[]>) {
             state.reviews = action.payload;
-            state.reviewsLoading = false;
-
-            return state;
-        },
-        setReviewsLoading(state) {
-            state.reviewsLoading = true;
 
             return state;
         },
         setSlides(state, action: PayloadAction<DocumentData[]>) {
             state.slides = action.payload;
-            state.slidesLoading = false;
-
-            return state;
-        },
-        setSlidesLoading(state) {
-            state.slidesLoading = true;
 
             return state;
         },
@@ -116,14 +90,13 @@ const appSlice = createSlice({
 
             return state;
         },
-        setUserAuthLoading(state, action: PayloadAction<string>) {
-            state.userAuthError = "";
-            state.userAuthLoading = true;
+        clearUserInfo(state) {
+            state.userEmail = "";
 
             return state;
         },
-        clearUserInfo(state) {
-            state.userEmail = "";
+        setContentLoading(state, action: PayloadAction<boolean>) {
+            state.isContentLoading = action.payload;
 
             return state;
         }
@@ -134,17 +107,14 @@ type TAppActionCreators = typeof appSlice.actions;
 export type TAppActions = ReturnType<TAppActionCreators[keyof TAppActionCreators]>;
 export const {
     setClubs,
-    setClubsLoading,
     setReviews,
-    setReviewsLoading,
     setSlides,
-    setSlidesLoading,
     setCalcResults,
     setCalcError,
     setUserAuthError,
     setUserEmail,
-    setUserAuthLoading,
-    clearUserInfo
+    clearUserInfo,
+    setContentLoading
 } = appSlice.actions;
 
 export default appSlice.reducer;

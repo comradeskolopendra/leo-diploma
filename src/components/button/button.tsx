@@ -5,9 +5,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
 }
 
-const Button: FC<ButtonProps> = ({ children, type, className = "", onClick }) => {
-
-    return (<button type={type} className={`${styles.button} ${className}`} onClick={onClick}>{children}</button>)
+const Button: FC<ButtonProps> = ({ children, type, className = "", onClick, disabled = false }) => {
+    return (<button type={type} className={`${styles.button} ${className}`} onClick={onClick} disabled={disabled}>{children}</button>)
 };
 
 export default Button;

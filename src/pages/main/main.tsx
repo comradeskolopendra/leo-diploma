@@ -7,20 +7,30 @@ import Start from "./contents/start/start";
 
 import Aside from "../../components/aside/aside";
 import Footer from "../../components/footer/footer";
+import Preloader from "../../components/preloader/preloader";
+import { useAppSelector } from "../../redux/hooks";
+import { getStateIsContentLoading } from "./selectors";
 
 const Main = () => {
+    const isContentLoading = useAppSelector(getStateIsContentLoading);
+
     return (
         <>
-            <Aside />
-            <main className={styles.main}>
-                <section className={styles.section}>
-                    <Start />
-                    <Clubs />
-                    <Reviews />
-                    <Calculator />
-                </section>
-            </main>
-            <Footer />
+            {isContentLoading && <Preloader />}
+            {!isContentLoading && (
+                <>
+                    <Aside />
+                    <main className={styles.main}>
+                        <section className={styles.section}>
+                            <Start />
+                            <Clubs />
+                            <Reviews />
+                            <Calculator />
+                        </section>
+                    </main>
+                    <Footer />
+                </>
+            )}
         </>
     )
 };

@@ -37,3 +37,9 @@
 .resultInfo ul li {
     padding-bottom: 0;
 }
+
+@media screen and (max-width: 560px) {
+    .resultInfo {
+        padding: 0;
+    }
+}

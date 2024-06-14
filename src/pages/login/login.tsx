@@ -1,11 +1,11 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 import styles from "./login.module.css";
 
-import TextInput from "../../components/text-input/text-input";
-import Button from "../../components/button/button";
-import { loginUser } from "../../firebase/helpers";
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/button/button";
+import TextInput from "../../components/text-input/text-input";
+import { loginUser } from "../../firebase/helpers";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setUserAuthError, setUserEmail } from "../../redux/store";
 import { getStateAuthError, getStateAuthLoading } from "./selectors";
@@ -28,6 +28,7 @@ const FormLogin = () => {
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        dispatch(setUserAuthError(""))
         const { type, info } = await loginUser(formData.email, formData.password);
 
         if (type === "success") {
@@ -47,6 +48,10 @@ const FormLogin = () => {
     const handleSwitchPasswordVisible = () => {
         setPasswordVisible(prevState => !prevState);
     };
+
+    useEffect(() => {
+        console.log(userAuthLoading);
+    }, [])
 
     return (
         <main className={styles.login}>
