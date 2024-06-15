@@ -4,7 +4,6 @@ import TextInput from "../../components/text-input/text-input";
 import { ISetClub } from "../../firebase/types";
 import { request } from "../../helpers";
 import styles from "./add-club.module.css";
-import { setClub } from "../../constants";
 
 const AddClub = () => {
     const [formData, setFormData] = useState<ISetClub>({
@@ -18,13 +17,12 @@ const AddClub = () => {
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
-        console.log(formData)
         setFormData(prevState => ({ ...prevState, [name]: value }))
     };
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setClub(formData)
+        request("setClub", { method: "POST", body: JSON.stringify(formData) });
     };
 
     return (

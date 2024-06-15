@@ -75,4 +75,4 @@ export const formatErrorRu = (error: string) => {
 };
 
 export const request = (endpoint: string, options = {}): Promise<any> =>
-    fetch(`${process.env.REACT_APP_URL_REQUESTS}/${endpoint}`, options).then((res) => res.json());
+    fetch(`https://leo-diploma-backend.vercel.app/${endpoint}`, options).then((res) => res.json());
