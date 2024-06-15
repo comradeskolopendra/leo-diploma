@@ -2,13 +2,13 @@ import { FirebaseOptions, initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig: FirebaseOptions = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+    apiKey: "AIzaSyD9hXMMNc49Y309QIM28f-OoycGn7kOJH0",
+    authDomain: "leo-diploma.firebaseapp.com",
+    projectId: "leo-diploma",
+    storageBucket: "leo-diploma.appspot.com",
+    messagingSenderId: "724286866684",
+    appId: "1:724286866684:web:9e407319b5643788b5c379",
+    measurementId: "G-8XWZ1G6S9L"
 };
 
 const app = initializeApp(firebaseConfig);
