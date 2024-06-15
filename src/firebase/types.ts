@@ -11,3 +11,7 @@ export interface ISetClub {
     network: string;
     typenetwork: string;
 }
+
+export interface IRemoveClub {
+    name: string;
+}

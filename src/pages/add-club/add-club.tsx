@@ -22,7 +22,14 @@ const AddClub = () => {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        request("setClub", { method: "POST", body: JSON.stringify(formData) });
+        request("setClub",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            });
     };
 
     return (

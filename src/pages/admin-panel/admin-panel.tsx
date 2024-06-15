@@ -16,6 +16,9 @@ const AdminPanel = () => {
             <Link to={"/add-club"} className={styles.link}>
                 Добавить клуб
             </Link>
+            <Link to={"/delete-club"} className={styles.link}>
+                Удалить клуб
+            </Link>
             <Button onClick={handleClickQuit} className={styles.button} type="button">Выйти</Button>
         </main>
     )
